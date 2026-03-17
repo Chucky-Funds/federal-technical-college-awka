@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Title-->
+  <title>FEDERAL SCIENCE AND TECHNICAL COLLEGE AWKA</title>
+
+  <!-- SEO Meta-->
+  <meta name="description" content="FEDERAL SCIENCE AND TECHNICAL COLLEGE AWKA's Official Website">
+  <meta name="keywords" content="FEDERAL SCIENCE AND TECHNICAL COLLEGE AWKA,Education, School, Website, EdTech, Nigeria, Federal Unity Colleges, Federal Government College, Platform, Eduportal">
+  <meta name="author" content="The Platform Technology Ltd">
+
+  <!-- viewport scale-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Favicon and Apple Icons-->
+  <link rel="icon" type="image/x-icon" href="https://platformeduportal.com/resources/clients/uploads/logo/0357143669.jpg">
+  <link rel="shortcut icon" href="https://platformeduportal.com/resources/clients/uploads/logo/0357143669.jpg">
+  <link rel="apple-touch-icon-precomposed" href="assets/img/favicon/96x96.png">
+
+  <!-- Icon fonts -->
+  <link rel="stylesheet" href="https://fstcawka.sch.ng/resources/themes/niger/fonts/fontawesome/css/all.css">
+  <link rel="stylesheet" href="https://fstcawka.sch.ng/resources/themes/niger/fonts/themify-icons/css/themify-icons.css">
+
+  <!-- stylesheet-->
+  <link rel="stylesheet" href="https://fstcawka.sch.ng/resources/themes/niger/css/vendors.bundle.css">
+  <link rel="stylesheet" href="https://fstcawka.sch.ng/resources/themes/niger/css/style.css">
+
+  <!-- Paystack Inline JS -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+
+  <!-- Form Custom CSS injected directly to ensure responsiveness without external interference -->
+  <style>
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+            width: 100%;
+            max-width: 550px;
+            margin: 0 auto;
+            z-index: 10;
+            text-align: left;
+            color: #333;
+        }
+        .form-container .form-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .form-container .form-header h2 {
+            color: #006633;
+            margin-bottom: 5px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .form-container .form-header p {
+            color: #666;
+            font-size: 14px;
+        }
+        .form-container .payment-type-toggle {
+            display: flex;
+            background: #f0f0f0;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+        .form-container .payment-type-toggle label {
+            flex: 1;
+            text-align: center;
+            padding: 12px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+            transition: background 0.3s, color 0.3s;
+            border-right: 1px solid #ddd;
+            margin: 0;
+            color: #333;
+        }
+        .form-container .payment-type-toggle label:last-child {
+            border-right: none;
+        }
+        .form-container .payment-type-toggle label.active {
+            background: #006633;
+            color: #ffffff;
+        }
+        .form-container .payment-type-toggle input {
+            display: none; 
+        }
+        .form-container .custom-input-group {
+            margin-bottom: 15px;
+            display: block;
+        }
+        .form-container .custom-input-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #444;
+        }
+        .form-container .custom-input-group input, 
+        .form-container .custom-input-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.3s;
+            background: #fff;
+            color: #333;
+        }
+        .form-container .custom-input-group input:focus, 
+        .form-container .custom-input-group select:focus {
+            border-color: #006633;
+        }
+        .form-container .dynamic-section {
+            display: none;
+        }
+        .form-container .dynamic-section.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .form-container .pay-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #006633;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        .form-container .pay-btn:hover {
+            background-color: #004d00;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 500px) {
+            .form-container .payment-type-toggle {
+                flex-direction: column;
+            }
+            .form-container .payment-type-toggle label {
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+            .form-container {
+                padding: 25px 20px;
+            }
+        }
+  </style>
+
+</head>
+
+<body>
+  <header class="site-header bg-dark text-white-0_5" style="background:#006633!important;color:white!important;">
+    <div class="container">
+      <div class="row align-items-center justify-content-between mx-0">
+        <ul class="list-inline d-none d-lg-block mb-0">
+          <li class="list-inline-item mr-3">
+            <div class="d-flex align-items-center">
+              <i class="ti-email mr-2"></i>
+              <a href="mailto:fstcawka@yahoo.com, info@fstcawka.sch.ng">fstcawka@yahoo.com, info@fstcawka.sch.ng</a>
+            </div>
+          </li>
+          <li class="list-inline-item mr-3">
+            <div class="d-flex align-items-center">
+              <i class="ti-headphone mr-2"></i>
+              <a href="tel:08035395949">08035395949</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item mr-0 p-md-3 p-2 border-right  border-white-0_1">
+            <a href="https://fstcawka.sch.ng/w_results">Check Result</a>
+          </li>
+          <li class="list-inline-item mr-0 p-md-3 p-2 border-right border-white-0_1">
+            <a href="https://fstcawka.centralbillingfuc.com" target="_blank"> Pay School Fees</a>
+          </li>
+        </ul>
+      </div> <!-- END row-->
+    </div> <!-- END container-->
+    <div class="col-md-12" style="background:crimson;color:white;text-align:center;z-index:999;">
+      <ul class="topbar-contact">
+        <div>
+          <div style="width:100%;font-size:14px;" align="left">
+            <marquee> Important Message : SECOND TERM BEGINS ON 11TH JANUARY, 2026 </marquee>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </header><!-- END site header-->
+
+  <nav class="ec-nav sticky-top bg-white">
+    <div class="container">
+      <div class="navbar p-0 navbar-expand-lg">
+        <div class="navbar-brand">
+          <a class="logo-default" href="https://fstcawka.sch.ng/"> <img alt="" src="https://platformeduportal.com/resources/clients/uploads/logo/0357143669.jpg" style="width:80px;">
+          </a>
+        </div>
+        <span aria-expanded="false" class="navbar-toggler ml-auto collapsed" data-target="#ec-nav__collapsible" data-toggle="collapse">
+          <div class="hamburger hamburger--spin js-hamburger">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+        </span>
+        <div class="collapse navbar-collapse when-collapsed" id="ec-nav__collapsible">
+          <ul class="nav navbar-nav ec-nav__navbar ml-auto">
+            <li class="nav-item nav-item__has-megamenu megamenu-col-2"> <a class="nav-link" href="https://fstcawka.sch.ng/">Home</a> </li>
+            <li class="nav-item nav-item__has-dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> About Us </a>
+              <div class="dropdown-menu">
+                <ul class="list-unstyled">
+                  <li><a class="nav-link__list" href="https://fstcawka.sch.ng/w_about"> About the School </a></li>
+                  <li><a class="nav-link__list" href="https://fstcawka.sch.ng/w_management"> School Management</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item nav-item__has-megamenu megamenu-col-2"> <a class="nav-link" href="https://fstcawka.sch.ng/w_news">News</a> </li>
+            <li class="nav-item nav-item__has-megamenu megamenu-col-2"> <a class="nav-link" href="https://fstcawka.sch.ng/w_gallery">Gallery</a> </li>
+            <li class="nav-item nav-item__has-megamenu megamenu-col-2"> <a class="nav-link" target="_blank" href="https://bit.ly/downloadEduportal">Download Mobile App</a> </li>
+            <li class="nav-item nav-item__has-megamenu megamenu-col-2"> <a class="nav-link" href="https://fstcawka.sch.ng/w_assignment">Assignments</a> </li>
+            <li class="nav-item nav-item__has-megamenu megamenu-col-2"> <a class="nav-link" href="https://fstcawka.sch.ng/w_contact">Contact Us</a> </li>
+            <li class="nav-item nav-item__has-megamenu megamenu-col-2"> <a class="nav-link" href="https://fstcawka.sch.ng/w_faq">FAQs</a> </li>
+            <li class="nav-item nav-item__has-dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> More Links </a>
+              <div class="dropdown-menu">
+                <ul class="list-unstyled">
+                  <li><a class="nav-link__list" href="https://fstcawka.sch.ng/cbt/login" target="_blank"> CBT Practice </a></li>
+                  <li><a class="nav-link__list" href="http://fmeinterviewtest.com/IndexAdmission.aspx" target="_blank">Check Admission Status</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> <!-- END container-->
+  </nav> <!-- END ec-nav -->
+   
+  <!-- HERO SLIDESHOW WITH PERSISTENT FORM OVERLAY -->
+  <div style="position: relative; min-height: 90vh; display: flex; align-items: center; overflow: hidden;">
+      
+      <!-- BACKGROUND SLIDESHOW (Slides with Arrows and Auto-timing) -->
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+          <div class="carousel-inner" style="height: 100%;">
+              
+              <!-- Slide 1 -->
+              <div class="carousel-item active" style="height: 100%;">
+                  <div class="bg-absolute" data-dark-overlay="5" style="background:url(https://www.fstcawka.sch.ng/resources/clients/uploads/others/684b4c5a3bad4506581181024443200.jpg) no-repeat center center; background-size: cover; width: 100%; height: 100%;"></div>
+              </div>
+              
+              <!-- Slide 2 -->
+              <div class="carousel-item" style="height: 100%;">
+                  <div class="bg-absolute" data-dark-overlay="5" style="background:url(https://fstcawka.sch.ng/resources/clients/uploads/others/6590eb6b19e99404807061010613300.jpg) no-repeat center center; background-size: cover; width: 100%; height: 100%;"></div>
+              </div>
+              
+              <!-- Slide 3 -->
+              <div class="carousel-item" style="height: 100%;">
+                  <div class="bg-absolute" data-dark-overlay="5" style="background:url(https://fstcawka.sch.ng/resources/clients/uploads/others/659d4bd235021955931127021711700.jpg) no-repeat center center; background-size: cover; width: 100%; height: 100%;"></div>
+              </div>
+              
+              <!-- Slide 4 -->
+              <div class="carousel-item" style="height: 100%;">
+                  <div class="bg-absolute" data-dark-overlay="5" style="background:url(https://fstcawka.sch.ng/resources/clients/uploads/others/6590ebc56a494998202171043534400.jpg) no-repeat center center; background-size: cover; width: 100%; height: 100%;"></div>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="carousel-item" style="height: 100%;">
+                  <div class="bg-absolute" data-dark-overlay="5" style="background:url(https://www.fstcawka.sch.ng/resources/clients/uploads/others/684b4638efc78665358024098213300.jpg) no-repeat center center; background-size: cover; width: 100%; height: 100%;"></div>
+              </div>
+              
+              <!-- Slide 6 -->
+              <div class="carousel-item" style="height: 100%;">
+                  <div class="bg-absolute" data-dark-overlay="5" style="background:url(https://fstcawka.sch.ng/resources/clients/uploads/others/659d577a430f3388172877027467100.jpg) no-repeat center center; background-size: cover; width: 100%; height: 100%;"></div>
+              </div>
+              
+              <!-- Slide 7 -->
+              <div class="carousel-item" style="height: 100%;">
+                  <div class="bg-absolute" data-dark-overlay="5" style="background:url(https://fstcawka.sch.ng/resources/clients/uploads/others/659d54d31aefd982354770011032900.jpg) no-repeat center center; background-size: cover; width: 100%; height: 100%;"></div>
+              </div>
+              
+              <!-- Slide 8 -->
+              <div class="carousel-item" style="height: 100%;">
+                  <div class="bg-absolute" data-dark-overlay="5" style="background:url(https://fstcawka.sch.ng/resources/clients/uploads/others/659d5f6744111262159069027879700.jpg) no-repeat center center; background-size: cover; width: 100%; height: 100%;"></div>
+              </div>
+              
+              <!-- Slide 9 -->
+              <div class="carousel-item" style="height: 100%;">
+                  <div class="bg-absolute" data-dark-overlay="5" style="background:url(https://fstcawka.sch.ng/resources/clients/uploads/others/659d57b1e495b530206339093627900.jpg) no-repeat center center; background-size: cover; width: 100%; height: 100%;"></div>
+              </div>
+              
+              <!-- Slide 10 -->
+              <div class="carousel-item" style="height: 100%;">
+                  <div class="bg-absolute" data-dark-overlay="5" style="background:url(https://fstcawka.sch.ng/resources/clients/uploads/others/659d54b1d5f73593509294087639900.jpg) no-repeat center center; background-size: cover; width: 100%; height: 100%;"></div>
+              </div>
+              
+              <!-- Slide 11 -->
+              <div class="carousel-item" style="height: 100%;">
+                  <div class="bg-absolute" data-dark-overlay="5" style="background:url(https://fstcawka.sch.ng/resources/clients/uploads/others/659d57ffa744a556744996068512500.jpg) no-repeat center center; background-size: cover; width: 100%; height: 100%;"></div>
+              </div>
+          </div>
+          
+          <!-- NAVIGATION ARROWS -->
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="z-index: 5; width: 10%;">
+              <i class="ti-angle-left iconbox bg-black-0_5 hover:primary" style="font-size: 24px; color: white;"></i>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="z-index: 5; width: 10%;">
+              <i class="ti-angle-right iconbox bg-black-0_5 hover:primary" style="font-size: 24px; color: white;"></i>
+          </a>
+      </div>
+
+      <!-- PERSISTENT PAYMENT FORM OVERLAY -->
+      <div class="container" style="position: relative; z-index: 10; padding: 60px 0;">
+          <div class="row">
+              <div class="col-lg-12 mx-auto">
+                  
+                  <!-- ================= THE INJECTED PAYMENT FORM ================= -->
+                  <div class="form-container animated slideInUp">
+                      <div class="form-header">
+                          <h2>Portal Payment</h2>
+                          <p>Select a payment category to proceed securely</p>
+                      </div>
+
+                      <!-- Custom Tabs for 3 Payment Categories -->
+                      <div class="payment-type-toggle">
+                          <label class="active" id="lbl_school_fees" onclick="selectPayment('school_fees')">
+                              <input type="radio" name="pay_type" value="school_fees" checked> School Fees
+                          </label>
+                          <label id="lbl_pta" onclick="selectPayment('pta')">
+                              <input type="radio" name="pay_type" value="pta"> PTA
+                          </label>
+                          <label id="lbl_items" onclick="selectPayment('items')">
+                              <input type="radio" name="pay_type" value="items"> Buy Items
+                          </label>
+                      </div>
+
+                      <form id="paymentForm" onsubmit="payWithPaystack(event)">
+                          
+                          <!-- Shared General Fields -->
+                          <div class="custom-input-group">
+                              <label>Full Name</label>
+                              <input type="text" id="fullName" placeholder="Student's Full Name: First Middle Last" required>
+                          </div>
+                          
+                          <div class="custom-input-group">
+                              <label>Email Address</label>
+                              <input type="email" id="email" placeholder="Parent or Student Email" required>
+                          </div>
+                          
+
+                          <!-- SECTION 1: School Fees Specific Fields -->
+                          <div id="sec_school_fees" class="dynamic-section active">
+                              <div class="custom-input-group">
+                                  <label>Class</label>
+                                  <select id="sf_class">
+                                      <option value="">Select Class</option>
+
+                                        <option value="JSS1A">JSS1 A</option>
+                                        <option value="JSS1B">JSS1 B</option>
+                                        <option value="JSS1C">JSS1 C</option>
+                                        <option value="JSS1D">JSS1 D</option>
+                                        <option value="JSS1E">JSS1 E</option>
+                                        <option value="JSS1G">JSS1 G</option>
+                                        <option value="JSS1H">JSS1 H</option>
+
+                                        <option value="JSS2A">JSS2 A</option>
+                                        <option value="JSS2B">JSS2 B</option>
+                                        <option value="JSS2C">JSS2 C</option>
+                                        <option value="JSS2D">JSS2 D</option>
+                                        <option value="JSS2E">JSS2 E</option>
+                                        <option value="JSS2G">JSS2 G</option>
+                                        <option value="JSS2H">JSS2 H</option>
+
+                                        <option value="SS2A">SS2 A</option>
+                                        <option value="SS2B">SS2 B</option>
+                                        <option value="SS2C">SS2 C</option>
+                                        <option value="SS2D">SS2 D</option>
+
+                                        <option value="ST2A">ST2 A</option>
+                                        <option value="ST2B">ST2 B</option>
+                                        <option value="ST2C">ST2 C</option>
+                                        <option value="ST2D">ST2 D</option>
+                                  </select>
+                              </div>
+                          <div class="custom-input-group">
+                              <label>Student Type</label>
+                              <select id="studentType" name="studentType">
+                                <option value="">Select Type</option>
+                                <option value="day">Day Student</option>
+                                <option value="boarder">Boarder</option>
+                              </select>
+                          </div>
+                          <div class="custom-input-group">
+                              <label>Gender</label>
+                              <select id="gender" name="gender">
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                              </select>
+                          </div>
+                            <div class="custom-input-group">
+                                  <label>Term</label>
+                                  <select id="sf_term">
+                                      <option value="">Select Term</option>
+                                      <option value="1st Term">1st Term</option>
+                                      <option value="2nd Term">2nd Term</option>
+                                      <option value="3rd Term">3rd Term</option>
+                                  </select>
+                              </div>
+                            </div>                                
+                          
+
+                          <!-- SECTION 2: PTA Specific Fields -->
+                          <div id="sec_pta" class="dynamic-section">
+                              <div id="sec_school_fees" class="dynamic-section active">
+                              <div class="custom-input-group">
+                                  <label>Class</label>
+                                  <select id="sf_class">
+                                      <option value="">Select Class</option>
+
+                                        <option value="JSS1A">JSS1 A</option>
+                                        <option value="JSS1B">JSS1 B</option>
+                                        <option value="JSS1C">JSS1 C</option>
+                                        <option value="JSS1D">JSS1 D</option>
+                                        <option value="JSS1E">JSS1 E</option>
+                                        <option value="JSS1G">JSS1 G</option>
+                                        <option value="JSS1H">JSS1 H</option>
+
+                                        <option value="JSS2A">JSS2 A</option>
+                                        <option value="JSS2B">JSS2 B</option>
+                                        <option value="JSS2C">JSS2 C</option>
+                                        <option value="JSS2D">JSS2 D</option>
+                                        <option value="JSS2E">JSS2 E</option>
+                                        <option value="JSS2G">JSS2 G</option>
+                                        <option value="JSS2H">JSS2 H</option>
+
+                                        <option value="SS2A">SS2 A</option>
+                                        <option value="SS2B">SS2 B</option>
+                                        <option value="SS2C">SS2 C</option>
+                                        <option value="SS2D">SS2 D</option>
+
+                                        <option value="ST2A">ST2 A</option>
+                                        <option value="ST2B">ST2 B</option>
+                                        <option value="ST2C">ST2 C</option>
+                                        <option value="ST2D">ST2 D</option>
+                                  </select>
+                              </div>
+                          <div class="custom-input-group">
+                              <label>Student Type</label>
+                              <select id="studentType" name="studentType">
+                                <option value="">Select Type</option>
+                                <option value="day">Day Student</option>
+                                <option value="boarder">Boarder</option>
+                              </select>
+                          </div>
+                          <div class="custom-input-group">
+                              <label>Gender</label>
+                              <select id="gender" name="gender">
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                              </select>
+                          </div>
+                            <div class="custom-input-group">
+                                  <label>Term</label>
+                                  <select id="sf_term">
+                                      <option value="">Select Term</option>
+                                      <option value="1st Term">1st Term</option>
+                                      <option value="2nd Term">2nd Term</option>
+                                      <option value="3rd Term">3rd Term</option>
+                                  </select>
+                              </div>
+                            </div>                 
+                          </div>
+
+                          <!-- SECTION 3: Buy Items Specific Fields -->
+                          <div id="sec_items" class="dynamic-section">
+                              <div id="sec_school_fees" class="dynamic-section active">
+                              <div class="custom-input-group">
+                                  <label>Class</label>
+                                  <select id="sf_class">
+                                      <option value="">Select Class</option>
+                                        <option value="JSS2A">JSS2 A</option>
+                                        <option value="JSS2B">JSS2 B</option>
+                                        <option value="JSS2C">JSS2 C</option>
+                                        <option value="JSS2D">JSS2 D</option>
+                                        <option value="JSS2E">JSS2 E</option>
+                                        <option value="JSS2G">JSS2 G</option>
+                                        <option value="JSS2H">JSS2 H</option>
+
+
+                                        <option value="JSS1A">JSS3 A</option>
+                                        <option value="JSS1B">JSS3 B</option>
+                                        <option value="JSS1C">JSS3 C</option>
+                                        <option value="JSS1D">JSS3 D</option>
+                                        <option value="JSS1E">JSS3 E</option>
+                                        <option value="JSS1G">JSS3 G</option>
+                                        <option value="JSS1H">JSS3 H</option>
+
+                                        <option value="SS2A">SS2 A</option>
+                                        <option value="SS2B">SS2 B</option>
+                                        <option value="SS2C">SS2 C</option>
+                                        <option value="SS2D">SS2 D</option>
+
+                                        <option value="ST2A">ST2 A</option>
+                                        <option value="ST2B">ST2 B</option>
+                                        <option value="ST2C">ST2 C</option>
+                                        <option value="ST2D">ST2 D</option>
+                                  </select>
+                              </div>
+                          <div class="custom-input-group">
+                              <label>Student Type</label>
+                              <select id="studentType" name="studentType">
+                                <option value="">Select Type</option>
+                                <option value="day">Day Student</option>
+                                <option value="boarder">Boarder</option>
+                              </select>
+                          </div>
+                          <div class="custom-input-group">
+                              <label>Gender</label>
+                              <select id="gender" name="gender">
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                              </select>
+                          </div>
+                            <div class="custom-input-group">
+                                  <label>Term</label>
+                                  <select id="sf_term">
+                                      <option value="">Select Term</option>
+                                      <option value="1st Term">1st Term</option>
+                                      <option value="2nd Term">2nd Term</option>
+                                      <option value="3rd Term">3rd Term</option>
+                                  </select>
+                              </div>
+                            </div>
+                            <div class="form-check" style="padding-left: 2px; padding-top: 15px; padding-bottom: 15px; font-size: 16px;">
+                                <input type="checkbox" id="confirmCheckItems" name="confirmCheckItems" style="transform: scale(1.5);">
+                                <label for="confirmCheckItems" style="padding-left: 3px;">Add 500 house fee</label>
+                            </div>
+                          </div>
+
+                          <!-- Always present Amount field (Changed type to "text" to allow ₦ sign to display) -->
+                          <div class="custom-input-group">
+                              <label>Amount to Pay</label>
+                              <input type="text" id="amount" placeholder="(NGN)" required readonly>
+                          </div>
+                          <div class="form-check" style="padding-left: 2px; font-size: 16px;">
+                                <input type="checkbox" id="confirmCheck" name="confirmCheck" required style="transform: scale(1.5);">
+                                <label for="confirmCheck" style="padding-left: 3px;">I confirm that all information entered is correct</label>
+                            </div>
+                          <button type="submit" class="pay-btn">Proceed to Pay</button>
+
+                          
+                      </form>
+                  </div>
+                  <!-- ========================================================================= -->
+
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-top bg-dark text-white-0_6 pt-5 paddingBottom-100">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 mt-5">
+            <img src="https://platformeduportal.com/resources/clients/uploads/logo/0357143669.jpg" alt="Logo" style="width:150px;">
+            <div class="margin-y-40">
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-5">
+            <h4 class="h5 text-white">Contact Us</h4>
+            <div class="width-3rem bg-primary height-3 mt-3"></div>
+            <ul class="list-unstyled marginTop-40">
+              <li class="mb-3"><i class="ti-headphone mr-3"></i>
+                <a href="tel:08035395949">08035395949</a>
+              </li>
+              <li class="mb-3"><i class="ti-email mr-3"></i>
+                <a href="mailto:fstcawka@yahoo.com, info@fstcawka.sch.ng">fstcawka@yahoo.com, info@fstcawka.sch.ng</a>
+              </li>
+              <li class="mb-3">
+                <div class="media">
+                  <i class="ti-location-pin mt-2 mr-3"></i>
+                  <div class="media-body">
+                    <span> Awka South, Anambra State</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-5">
+            <h4 class="h5 text-white">Quick links</h4>
+            <div class="width-3rem bg-primary height-3 mt-3"></div>
+            <ul class="list-unstyled marginTop-40">
+              <li class="mb-2"><a href="https://fstcawka.sch.ng/w_about">About Us</a></li>
+              <li class="mb-2"><a href="https://fstcawka.sch.ng/w_management">Management</a></li>
+              <li class="mb-2"><a href="https://fstcawka.sch.ng/w_news">News</a></li>
+              <li class="mb-2"><a href="https://fstcawka.sch.ng/w_newsletter">Newsletters</a></li>
+              <li class="mb-2"><a href="https://fstcawka.sch.ng/w_faq">FAQs</a></li>
+            </ul>
+          </div>
+
+        </div> <!-- END row-->
+      </div> <!-- END container-->
+    </div> <!-- END footer-top-->
+  </footer> <!-- END site-footer -->
+  
+  <div style="background:#006633;color:white;position:fixed;bottom:0px;left:0px;right:0px;height:50px;text-align: center;z-index:999;padding:1em;">
+    <p class="text-white-0_5 mb-0"> <span style="color:white!important"> FEDERAL SCIENCE AND TECHNICAL COLLEGE AWKA </span> &copy; 2026 All rights reserved. Powered by <a href="http://platformtechltd.com" target="_blank" style="color:green;">The Platform Technology Ltd</a></p>
+  </div>
+
+  <div class="scroll-top">
+    <i class="ti-angle-up"></i>
+  </div>
+  
+  <!-- FLOATERS  -->
+  <div style="background:white;padding:1em;top:200px;border-radius:1em;position:fixed;right:0;z-index:9000;text-align:center;">
+    <a style="color:white!important;" href="https://bit.ly/downloadEduportal" target="_blank">
+      <p style="color:red">
+        Download <br /> School <br /> Mobile App.<br />
+        <blink>Click Here </blink>
+      </p>
+      <br />
+      <img style="width:50px;" src="https://www.fggcbenin.sch.ng/resources/schooApp.webp" />
+    </a>
+  </div>
+
+  <script src="https://fstcawka.sch.ng/resources/themes/niger/js/vendors.bundle.js"></script>
+  <script src="https://fstcawka.sch.ng/resources/themes/niger/js/scripts.js"></script>
+
+  <!-- SCHOOL FEES AMOUNT LOGIC -->
+  <script>
+    // Map for class/student type to amount
+    const amountMap = {
+      // ST3
+      'ST3_day': 25400,
+      'ST3_boarder': 55400,
+      // ST2
+      'ST2_day': 17400,
+      'ST2_boarder': 47400,
+      // SS3
+      'SS3_day': 30150,
+      'SS3_boarder': 60150,
+      // SS2
+      'SS2_day': 17400,
+      'SS2_boarder': 47400,
+      // SS1 (Added missing mappings to ensure it updates)
+      'SS1_day': 17400,
+      'SS1_boarder': 47400,
+      // JSS3
+      'JSS3_day': 16400,
+      'JSS3_boarder': 46400,
+      // JSS2
+      'JSS2_day': 17400,
+      'JSS2_boarder': 47400,
+      // JSS1 (Added missing mappings to ensure it updates)
+      'JSS1_day': 17400,
+      'JSS1_boarder': 47400
+    };
+
+    // Helper to extract main class group
+    function getClassGroup(classValue) {
+      if (!classValue) return '';
+      // Accepts all JSS, SS, and ST variants correctly now
+      const match = classValue.match(/^(ST[1-3]|SS[1-3]|JSS[1-3])/i);
+      return match ? match[1].toUpperCase() : '';
+    }
+
+    function updateAmountField() {
+      // Find the currently active section tab
+      let activeSection;
+      if (document.getElementById('sec_items').classList.contains('active')) {
+          activeSection = document.getElementById('sec_items');
+      } else if (document.getElementById('sec_pta').classList.contains('active')) {
+          activeSection = document.getElementById('sec_pta');
+      } else {
+          activeSection = document.getElementById('sec_school_fees');
+      }
+
+      // Query the specific selects inside the active tab
+      const classSelect = activeSection.querySelector('select[id="sf_class"]');
+      const studentTypeSelect = activeSection.querySelector('select[id="studentType"]');
+      const termSelect = activeSection.querySelector('select[id="sf_term"]');
+      const amountInput = document.getElementById('amount');
+      
+      if (!classSelect || !studentTypeSelect || !termSelect || !amountInput) return;
+      
+      const classGroup = getClassGroup(classSelect.value);
+      const studentType = studentTypeSelect.value;
+      const term = termSelect.value;
+      
+      // Only show amount if all three are selected and term is 3rd Term
+      if (!classGroup || !studentType || term !== '3rd Term') {
+        amountInput.value = '';
+        return;
+      }
+      
+      let key = `${classGroup}_${studentType}`;
+      let amount = amountMap[key];
+      
+      if (amount) {
+        amountInput.value = `₦${amount.toLocaleString()}`;
+      } else {
+        amountInput.value = '';
+      }
+    }
+
+    // Attach listeners that immediately trigger on any dropdown selection inside the form
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('paymentForm');
+      if (form) {
+        form.addEventListener('change', updateAmountField);
+        form.addEventListener('input', updateAmountField);
+      }
+      
+      // Also update instantly when tabs are toggled
+      const toggles = document.querySelectorAll('.payment-type-toggle label');
+      toggles.forEach(toggle => {
+          toggle.addEventListener('click', () => {
+              setTimeout(updateAmountField, 50); 
+          });
+      });
+    });
+  </script>
+
+  <!-- FORM TABS AND PAYSTACK JAVASCRIPT LOGIC -->
+  <script>
+      // Make full name input always uppercase as user types
+      window.addEventListener('DOMContentLoaded', function() {
+        var fullNameInput = document.getElementById('fullName');
+        if (fullNameInput) {
+          fullNameInput.addEventListener('input', function() {
+            this.value = this.value.toUpperCase();
+          });
+        }
+      });
+      
+      function selectPayment(type) {
+          // Remove active state from all labels
+          document.getElementById('lbl_school_fees').classList.remove('active');
+          document.getElementById('lbl_pta').classList.remove('active');
+          document.getElementById('lbl_items').classList.remove('active');
+          
+          // Hide all dynamic sections
+          document.getElementById('sec_school_fees').classList.remove('active');
+          document.getElementById('sec_pta').classList.remove('active');
+          document.getElementById('sec_items').classList.remove('active');
+          
+          // Add active state to clicked label and corresponding section
+          document.getElementById('lbl_' + type).classList.add('active');
+          document.getElementById('sec_' + type).classList.add('active');
+      }
+
+      function payWithPaystack(e) {
+        e.preventDefault();
+
+        let fullNameInput = document.getElementById("fullName");
+        let fullName = fullNameInput.value.trim();
+        // Convert to uppercase and update input
+        fullName = fullName.toUpperCase();
+        fullNameInput.value = fullName;
+
+        // Validate full name contains 3 words
+        const nameWords = fullName.split(/\s+/);
+        if (nameWords.length !== 3) {
+          alert("Full Name must contain exactly three names (First Middle Last).");
+          fullNameInput.focus();
+          return;
+        }
+
+        const email = document.getElementById("email").value;
+        
+        // Retrieve amount and strip non-numeric characters (like '₦' and commas) for Paystack
+        let rawAmount = document.getElementById("amount").value;
+        const amount = parseFloat(rawAmount.replace(/[^0-9.]/g, ''));
+
+        if (isNaN(amount) || amount <= 0) {
+          alert("Please ensure a valid amount is displayed before paying.");
+          return;
+        }
+
+        // Determine which section is active
+        const schoolFeesActive = document.getElementById('sec_school_fees').classList.contains('active');
+        const ptaActive = document.getElementById('sec_pta').classList.contains('active');
+        const itemsActive = document.getElementById('sec_items').classList.contains('active');
+
+        if (schoolFeesActive || ptaActive) {
+          // Validate selects for school fees and PTA
+          const classSelect = document.querySelector('#sec_school_fees.active #sf_class, #sec_pta.active #sf_class');
+          const studentTypeSelect = document.querySelector('#sec_school_fees.active #studentType, #sec_pta.active #studentType');
+          const genderSelect = document.querySelector('#sec_school_fees.active #gender, #sec_pta.active #gender');
+          const termSelect = document.querySelector('#sec_school_fees.active #sf_term, #sec_pta.active #sf_term');
+
+          if (!classSelect || classSelect.value === "") {
+            alert("Please select a valid Class.");
+            classSelect && classSelect.focus();
+            return;
+          }
+          if (!studentTypeSelect || studentTypeSelect.value === "") {
+            alert("Please select Student Type.");
+            studentTypeSelect && studentTypeSelect.focus();
+            return;
+          }
+          if (!genderSelect || genderSelect.value === "") {
+            alert("Please select Gender.");
+            genderSelect && genderSelect.focus();
+            return;
+          }
+          if (!termSelect || termSelect.value === "") {
+            alert("Please select Term.");
+            termSelect && termSelect.focus();
+            return;
+          }
+        }
+
+        if (itemsActive) {
+          // Validate selects for items
+          const itemSelect = document.getElementById('item_selected');
+          if (itemSelect && itemSelect.value === "") {
+            alert("Please select an item to buy.");
+            itemSelect && itemSelect.focus();
+            return;
+          }
+        }
+
+        let handler = PaystackPop.setup({
+          key: 'pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', // REPLACE WITH YOUR ACTUAL PAYSTACK KEY
+          email: email,
+          amount: amount * 100, // Paystack operates in kobo (now multiplied correctly)
+          currency: 'NGN',
+          ref: 'FSTC_' + Math.floor((Math.random() * 1000000000) + 1),
+          metadata: {
+            custom_fields:[
+              {
+                display_name: "Full Name",
+                variable_name: "full_name",
+                value: fullName
+              }
+            ]
+          },
+          callback: function(response) {
+            alert('Payment successful! Transaction Reference: ' + response.reference);
+            window.location.reload();
+          },
+          onClose: function() {
+            alert('Payment window closed. Payment was not completed.');
+          }
+        });
+
+        handler.openIframe();
+      }
+  </script>
+
+</body>
+</html>
