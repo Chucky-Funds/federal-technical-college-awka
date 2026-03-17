@@ -518,14 +518,6 @@
                                   <select id="sf_class">
                                       <option value="">Select Class</option>
 
-                                        <option value="JSS1A">JSS1 A</option>
-                                        <option value="JSS1B">JSS1 B</option>
-                                        <option value="JSS1C">JSS1 C</option>
-                                        <option value="JSS1D">JSS1 D</option>
-                                        <option value="JSS1E">JSS1 E</option>
-                                        <option value="JSS1G">JSS1 G</option>
-                                        <option value="JSS1H">JSS1 H</option>
-
                                         <option value="JSS2A">JSS2 A</option>
                                         <option value="JSS2B">JSS2 B</option>
                                         <option value="JSS2C">JSS2 C</option>
@@ -537,10 +529,10 @@
                                         <option value="JSS3A">JSS3 A</option>
                                         <option value="JSS3B">JSS3 B</option>
                                         <option value="JSS3C">JSS3 C</option>
-
-                                        <option value="SS1A">SS1 A</option>
-                                        <option value="SS1B">SS1 B</option>
-                                        <option value="SS1C">SS1 C</option>
+                                        <option value="JSS2D">JSS3 D</option>
+                                        <option value="JSS2E">JSS3 E</option>
+                                        <option value="JSS2G">JSS3 G</option>
+                                        <option value="JSS2H">JSS3 H</option>
 
                                         <option value="SS2A">SS2 A</option>
                                         <option value="SS2B">SS2 B</option>
@@ -550,9 +542,8 @@
                                         <option value="SS3A">SS3 A</option>
                                         <option value="SS3B">SS3 B</option>
                                         <option value="SS3C">SS3 C</option>
+                                        <option value="ST2C">SS3 D</option>
                                         
-                                        <option value="ST1A">ST1 A</option>
-                                        <option value="ST1B">ST1 B</option>
                                         
                                         <option value="ST2A">ST2 A</option>
                                         <option value="ST2B">ST2 B</option>
@@ -561,6 +552,8 @@
                                         
                                         <option value="ST3A">ST3 A</option>
                                         <option value="ST3B">ST3 B</option>
+                                        <option value="ST2C">ST3 C</option>
+                                        <option value="ST2D">ST3 D</option>
                                   </select>
                               </div>
                           <div class="custom-input-group">
@@ -581,12 +574,7 @@
                           </div>
                             <div class="custom-input-group">
                                   <label>Term</label>
-                                  <select id="sf_term">
-                                      <option value="">Select Term</option>
-                                      <option value="1st Term">1st Term</option>
-                                      <option value="2nd Term">2nd Term</option>
-                                      <option value="3rd Term">3rd Term</option>
-                                  </select>
+                                  <input type="text" id="sf_term" placeholder="Third term" required readonly value="3rd Term">
                               </div>
                             </div>                                
                           
@@ -1034,7 +1022,7 @@
 
       function launchPaystack() {
         let handler = PaystackPop.setup({
-          key: 'pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', 
+          key: 'pk_test_233ae251c7cdfbfabe22ef9ffdcef9397d7de765', 
           email: currentPaymentPayload.email,
           amount: currentPaymentPayload.amount * 100, 
           currency: 'NGN',
