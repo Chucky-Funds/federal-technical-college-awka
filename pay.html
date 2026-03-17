@@ -1267,6 +1267,7 @@
         const phone = document.getElementById("phone").value;
         
         const schoolFeesActive = document.getElementById('sec_school_fees').classList.contains('active');
+        const ptaActive = document.getElementById('sec_pta').classList.contains('active');
         
         if (schoolFeesActive) {
             let rawAmount = document.getElementById("amount").value;
@@ -1333,9 +1334,77 @@
             // Scroll modal to top automatically
             document.getElementById('modalBodyScroll').scrollTop = 0;
             
+        } else if (ptaActive) {
+            let rawAmount = document.getElementById("pta_amount").value;
+            const amount = parseFloat(rawAmount.replace(/[^0-9.]/g, ''));
+
+            if (isNaN(amount) || amount <= 0) {
+              alert("Please ensure a valid amount is displayed before paying.");
+              return;
+            }
+
+            const classSelect = document.getElementById("pta_class");
+            const studentTypeSelect = document.getElementById("pta_studentType");
+            const genderSelect = document.getElementById("pta_gender");
+            const termSelect = document.getElementById("pta_term");
+
+            if (!classSelect || classSelect.value === "") { alert("Please select a valid Class."); return; }
+            if (!studentTypeSelect || studentTypeSelect.value === "") { alert("Please select Student Type."); return; }
+            if (!genderSelect || genderSelect.value === "") { alert("Please select Gender."); return; }
+            if (!termSelect || termSelect.value === "") { alert("Please select Term."); return; }
+
+            currentPaymentPayload = {
+                email: email,
+                amount: amount,
+                fullName: fullName
+            };
+
+            const classGrp = getClassGroup(classSelect.value); 
+            const studentType = studentTypeSelect.value;       
+
+            // Gather Dynamic Data for our UI Invoice
+            let d = new Date();
+            let dateStr = d.getFullYear() + "-" + 
+                          String(d.getMonth() + 1).padStart(2, '0') + "-" + 
+                          String(d.getDate()).padStart(2, '0') + " " + 
+                          String(d.getHours()).padStart(2, '0') + ":" + 
+                          String(d.getMinutes()).padStart(2, '0') + ":" + 
+                          String(d.getSeconds()).padStart(2, '0');
+
+            // Find the correct RRR input within the active PTA section
+            const rrrInput = document.querySelector('#sec_pta input[placeholder="xxxxxxxxxxxx"]');
+            const rrrValue = rrrInput ? rrrInput.value : '';
+
+            const invoiceData = {
+                fullName: fullName,
+                email: email,
+                phone: phone,
+                gender: genderSelect.options[genderSelect.selectedIndex].text.toUpperCase(),
+                className: classSelect.options[classSelect.selectedIndex].text,
+                classGrp: classGrp,
+                term: termSelect.value,
+                residence: studentType === 'boarder' ? 'Boarder' : 'Day Student',
+                username: 'FSTCAW' + Math.floor(10000000 + Math.random() * 90000000).toString(),
+                rrr: rrrValue,
+                items: [{ name: 'PTA LEVY', amount: amount }],
+                totalFormatted: amount.toLocaleString(),
+                dateStr: dateStr
+            };
+
+            // Store globally for callback access
+            window.invoiceData = invoiceData;
+
+            // Build HTML and display in Modal
+            const htmlContent = buildInvoiceHTML(invoiceData);
+            document.getElementById('invoiceContainer').innerHTML = htmlContent;
+            document.getElementById('pdfModalOverlay').style.display = 'flex';
+            
+            // Scroll modal to top automatically
+            document.getElementById('modalBodyScroll').scrollTop = 0;
+
         } else {
-            // Handlers for PTA and Items go here when you are ready to build them
-            alert("PTA or Buy Items logic will be implemented here.");
+            // Handlers for Items go here when you are ready to build them
+            alert("Buy Items logic will be implemented here.");
         }
       }
 
