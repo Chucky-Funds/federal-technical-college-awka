@@ -12,8 +12,8 @@
   <meta name="keywords" content="FEDERAL SCIENCE AND TECHNICAL COLLEGE AWKA,Education, School, Website, EdTech, Nigeria, Federal Unity Colleges, Federal Government College, Platform, Eduportal">
   <meta name="author" content="The Platform Technology Ltd">
 
-  <!-- viewport scale-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- viewport scale (Updated for better responsive scaling) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Favicon and Apple Icons-->
   <link rel="icon" type="image/x-icon" href="https://platformeduportal.com/resources/clients/uploads/logo/0357143669.jpg">
@@ -33,6 +33,11 @@
 
   <!-- Form Custom CSS injected directly to ensure responsiveness without external interference -->
   <style>
+        /* Base page adjustments to prevent content overlap with fixed footer */
+        body {
+            padding-bottom: 60px;
+        }
+
         .form-container {
             background-color: #ffffff;
             padding: 40px;
@@ -144,18 +149,15 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Mobile Adjustments */
-        @media (max-width: 500px) {
-            .form-container .payment-type-toggle {
-                flex-direction: column;
-            }
-            .form-container .payment-type-toggle label {
-                border-right: none;
-                border-bottom: 1px solid #ddd;
-            }
-            .form-container {
-                padding: 25px 20px;
-            }
+        /* Checkbox responsive alignment */
+        .form-check {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .form-check input {
+            margin-top: 0 !important;
         }
 
         /* ==========================================================
@@ -215,6 +217,7 @@
             overflow-y: auto;
             display: flex;
             justify-content: center;
+            align-items: flex-start; /* Ensures tall content isn't cut off at the top on small screens */
         }
         .pdf-modal-footer {
             padding: 20px 25px;
@@ -235,6 +238,7 @@
             position: relative;
             font-family: Arial, sans-serif;
             color: #000;
+            margin: 0 auto;
         }
         .generated-invoice * {
             box-sizing: border-box;
@@ -245,6 +249,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             width: 450px;
+            max-width: 90%;
             opacity: 0.04;
             pointer-events: none;
             z-index: 0;
@@ -361,6 +366,123 @@
             font-size: 9px;
             color: #333;
         }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ==========================================================
+           RESPONSIVE MEDIA QUERIES
+        ========================================================== */
+
+        /* Tablets & Medium Screens */
+        @media (max-width: 768px) {
+            .pdf-modal-overlay {
+                padding: 10px;
+            }
+            .pdf-modal {
+                max-height: 90vh;
+            }
+            .pdf-modal-header {
+                padding: 12px 15px;
+            }
+            .pdf-modal-header h3 {
+                font-size: 16px;
+            }
+            .pdf-modal-body {
+                padding: 15px 10px;
+            }
+            .pdf-modal-footer {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px;
+            }
+            .pdf-modal-footer button {
+                width: 100%;
+            }
+            
+            .generated-invoice {
+                padding: 25px;
+            }
+            .invoice-top-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .invoice-top-header h2 {
+                text-align: center;
+            }
+            .invoice-details-box {
+                flex-direction: column;
+            }
+            .invoice-details-left, 
+            .invoice-details-middle {
+                border-right: none;
+                border-bottom: 1px solid #ccc;
+                padding: 15px;
+            }
+            .invoice-details-right {
+                width: 100%;
+                padding: 15px;
+                justify-content: center;
+            }
+            .invoice-rrr-section {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .invoice-table th, .invoice-table td {
+                padding: 6px;
+            }
+        }
+
+        /* Mobile Adjustments (Phones) */
+        @media (max-width: 500px) {
+            .form-container .payment-type-toggle {
+                flex-direction: column;
+            }
+            .form-container .payment-type-toggle label {
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+            .form-container {
+                padding: 25px 20px;
+            }
+            .form-container .form-header h2 {
+                font-size: 22px;
+            }
+
+            .generated-invoice {
+                padding: 15px;
+            }
+            .invoice-top-header h2 {
+                font-size: 14px;
+            }
+            .invoice-subtitle {
+                font-size: 11px;
+                margin-top: 10px;
+                margin-bottom: 15px;
+            }
+            .invoice-text-row {
+                font-size: 10px;
+            }
+            .invoice-rrr-text {
+                font-size: 15px;
+            }
+            .invoice-table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                white-space: nowrap;
+            }
+            .invoice-footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 10px;
+            }
+        }
   </style>
 
 </head>
@@ -396,7 +518,7 @@
     <div class="col-md-12" style="background:crimson;color:white;text-align:center;z-index:999;">
       <ul class="topbar-contact">
         <div>
-          <div style="width:100%;font-size:14px;" align="left">
+          <div style="width:100%;font-size:14px;overflow:hidden;" align="left">
             <marquee> Important Message : SECOND TERM BEGINS ON 11TH JANUARY, 2026 </marquee>
           </div>
         </div>

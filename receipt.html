@@ -6,13 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="https://platformeduportal.com/resources/clients/uploads/logo/0357143669.jpg">
   <style>
-    body { background: #f5f5f5; font-family: Arial, sans-serif; margin: 0; }
-    .container { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); padding: 40px; }
+    /* Added Box Sizing for proper responsive behavior */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body { 
+      background: #f5f5f5; 
+      font-family: Arial, sans-serif; 
+      margin: 0; 
+      padding: 15px; 
+    }
+    
+    .container { 
+      max-width: 900px; 
+      width: 100%; 
+      margin: 20px auto; 
+      background: #fff; 
+      border-radius: 8px; 
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12); 
+      padding: 40px; 
+    }
+    
     .header { text-align: center; margin-bottom: 30px; }
     .header h2 { color: #006633; margin-bottom: 8px; }
-    .download-btn { display: block; margin: 30px auto 0 auto; background: #006633; color: #fff; border: none; border-radius: 4px; padding: 16px 32px; font-size: 18px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+    
+    .download-btn { 
+      display: block; 
+      margin: 30px auto 0 auto; 
+      background: #006633; 
+      color: #fff; 
+      border: none; 
+      border-radius: 4px; 
+      padding: 16px 32px; 
+      font-size: 18px; 
+      font-weight: bold; 
+      cursor: pointer; 
+      transition: background 0.3s; 
+    }
     .download-btn:hover { background: #004d00; }
+    
     #invoiceContainer { margin-top: 20px; }
+    
     /* Enhanced table styles */
     .invoice-table {
       width: 100%;
@@ -21,6 +56,7 @@
       font-size: 12px;
       margin-bottom: 20px;
       border: 1px solid #ccc;
+      word-break: break-word; 
     }
     .invoice-table th, .invoice-table td {
       border: 1px solid #ccc;
@@ -44,6 +80,66 @@
       font-weight: bold;
       background: #f9f9f9;
     }
+
+    /* =========================================
+       RESPONSIVE MEDIA QUERIES
+       ========================================= */
+
+    /* Tablet and Small Laptops */
+    @media screen and (max-width: 768px) {
+      .container { padding: 30px 20px; }
+      .generated-invoice { padding: 30px !important; }
+    }
+
+    /* Large Phones & Small Tablets */
+    @media screen and (max-width: 600px) {
+      .container { padding: 20px 15px; }
+      .generated-invoice { padding: 20px !important; }
+      
+      .invoice-top-header { flex-direction: column !important; text-align: center; gap: 10px !important; }
+      .invoice-top-header h2 { font-size: 16px !important; line-height: 1.4; }
+      
+      /* Stack the invoice details vertically */
+      .invoice-details-box { flex-direction: column !important; }
+      .invoice-details-left, .invoice-details-middle { 
+        border-right: none !important; 
+        border-bottom: 1px solid #ccc !important; 
+        padding: 15px !important; 
+      }
+      .invoice-details-right { 
+        width: 100% !important; 
+        padding: 15px !important; 
+      }
+      
+      /* Stack the RRR code block */
+      .invoice-rrr-section { flex-direction: column !important; gap: 15px !important; text-align: center; }
+      .invoice-rrr-text { font-size: 16px !important; }
+      
+      .invoice-subtitle { margin: 15px 0 20px 0 !important; font-size: 12px !important; line-height: 1.5; }
+      
+      /* Scale the watermark gracefully */
+      .generated-invoice img[alt="Watermark"] { width: 90% !important; max-width: 300px !important; }
+      
+      /* Center bottom footer */
+      .invoice-footer { flex-direction: column !important; align-items: center !important; gap: 12px; }
+      
+      /* Scale the button */
+      .download-btn { width: 100%; padding: 15px 20px; font-size: 16px; }
+    }
+
+    /* Extra Small Phones */
+    @media screen and (max-width: 480px) {
+      body { padding: 10px; }
+      .container { padding: 15px 10px; margin: 10px auto; }
+      .generated-invoice { padding: 15px !important; }
+      
+      /* Compress table padding for tiny screens */
+      .invoice-table th, .invoice-table td { padding: 8px 10px; font-size: 10px; }
+      .invoice-table th.amount-col { width: auto !important; }
+      .invoice-top-header h2 { font-size: 14px !important; }
+      .header h2 { font-size: 22px; }
+      .header p { font-size: 14px; }
+    }
   </style>
 </head>
 <body>
@@ -55,7 +151,9 @@
     <div id="invoiceContainer"></div>
     <button class="download-btn" id="downloadBtn">Download as PDF</button>
   </div>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
     // Invoice rendering logic (same as pay.html)
     function buildInvoiceHTML(data) {
@@ -128,17 +226,18 @@
     }
     // PDF download logic
     document.getElementById('downloadBtn').addEventListener('click', function() {
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF({ orientation: 'portrait', unit: 'pt', format: 'a4' });
-      doc.html(document.getElementById('invoiceContainer'), {
-        callback: function(pdf) {
-          pdf.save('FSTC_AWKA_Invoice_' + (invoiceData.rrr || 'receipt') + '.pdf');
-        },
-        margin: [20, 20, 20, 20],
-        autoPaging: true,
-        x: 0,
-        y: 0,
-        width: 570
+      const invoiceElem = document.getElementById('invoiceContainer');
+      html2canvas(invoiceElem, { scale: 2 }).then(function(canvas) {
+        const imgData = canvas.toDataURL('image/png');
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ orientation: 'portrait', unit: 'pt', format: 'a4' });
+        // Calculate image dimensions for A4
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const pageHeight = pdf.internal.pageSize.getHeight();
+        const imgWidth = pageWidth - 40;
+        const imgHeight = canvas.height * imgWidth / canvas.width;
+        pdf.addImage(imgData, 'PNG', 20, 20, imgWidth, imgHeight);
+        pdf.save('FSTC_AWKA_Invoice_' + (invoiceData.rrr || 'receipt') + '.pdf');
       });
     });
   </script>
