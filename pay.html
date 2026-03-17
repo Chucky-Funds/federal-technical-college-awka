@@ -635,6 +635,11 @@
 
                           <!-- SECTION 1: School Fees Specific Fields -->
                           <div id="sec_school_fees" class="dynamic-section active">
+                            
+                          <div class="custom-input-group">
+                              <label>RRR</label>
+                              <input type="number" id="rrr" placeholder="xxxxxxxxxxxx" required>
+                          </div>
                               <div class="custom-input-group">
                                   <label>Class</label>
                                   <select id="sf_class">
@@ -711,6 +716,11 @@
                           
                           <!-- SECTION 2 & 3 Placeholder -->
                           <div id="sec_pta" class="dynamic-section">
+                            
+                          <div class="custom-input-group">
+                              <label>RRR</label>
+                              <input type="number" id="rrr" placeholder="xxxxxxxxxxxx" required>
+                          </div>
                              <div class="custom-input-group">
                                   <label>Class</label>
                                   <!-- Replaced empty ID with unique pta_class -->
@@ -732,6 +742,10 @@
                                         <option value="JSS2E">JSS3 E</option>
                                         <option value="JSS2G">JSS3 G</option>
                                         <option value="JSS2H">JSS3 H</option>
+
+                                        <option value="TVET1A">TVET1A</option>
+                                        <option value="TVET1B">TVET1B</option>
+                                        <option value="TVET1C">TVET1C</option>
 
                                         <option value="SS2A">SS2 A</option>
                                         <option value="SS2B">SS2 B</option>
@@ -907,7 +921,7 @@
   <script src="https://fstcawka.sch.ng/resources/themes/niger/js/vendors.bundle.js"></script>
   <script src="https://fstcawka.sch.ng/resources/themes/niger/js/scripts.js"></script>
 
-  <!-- SCHOOL FEES AMOUNT LOGIC -->
+  <!-- AMOUNT LOGIC (SCHOOL FEES & PTA) -->
   <script>
     const amountMap = {
       'ST3_day': 25400, 'ST3_boarder': 55400,
@@ -921,18 +935,36 @@
       'JSS1_day': 17400, 'JSS1_boarder': 47400
     };
 
+    const ptaAmountMap = {
+      'TVET1_day': 5000, 'TVET1_boarder': 5000,
+      'ST3_day': 12000, 'ST3_boarder': 12000,
+      'ST2_day': 12000, 'ST2_boarder': 12000,
+      'ST1_day': 12000, 'ST1_boarder': 12000,
+      'SS3_day': 12000, 'SS3_boarder': 12000,
+      'SS2_day': 12000, 'SS2_boarder': 12000,
+      'SS1_day': 12000, 'SS1_boarder': 12000,
+      'JSS3_day': 12000, 'JSS3_boarder': 12000,
+      'JSS2_day': 12000, 'JSS2_boarder': 12000,
+      'JSS1_day': 12000, 'JSS1_boarder': 12000
+    };
+
     function getClassGroup(classValue) {
       if (!classValue) return '';
-      const match = classValue.match(/^(ST[1-3]|SS[1-3]|JSS[1-3])/i);
+      const match = classValue.match(/^(TVET1|ST[1-3]|SS[1-3]|JSS[1-3])/i);
       return match ? match[1].toUpperCase() : '';
     }
 
     function updateAmountField() {
       let activeSection = document.querySelector('.dynamic-section.active');
+      if (!activeSection) return;
+
+      const sectionId = activeSection.id;
+      
+      // Dynamically locate elements within the currently active section
       const classSelect = activeSection.querySelector('select[id*="class"]');
-      const studentTypeSelect = document.getElementById('studentType');
-      const termSelect = document.getElementById('sf_term');
-      const amountInput = document.getElementById('amount');
+      const studentTypeSelect = activeSection.querySelector('select[id*="studentType"]');
+      const termSelect = activeSection.querySelector('input[id*="term"]');
+      const amountInput = activeSection.querySelector('input[id*="amount"]');
       
       if (!classSelect || !studentTypeSelect || !termSelect || !amountInput) return;
       
@@ -946,7 +978,14 @@
       }
       
       let key = `${classGroup}_${studentType}`;
-      let amount = amountMap[key];
+      let amount;
+
+      // Apply independent maps based on the specific section dynamically
+      if (sectionId === 'sec_school_fees') {
+          amount = amountMap[key];
+      } else if (sectionId === 'sec_pta') {
+          amount = ptaAmountMap[key];
+      }
       
       if (amount) {
         amountInput.value = `₦${amount.toLocaleString()}`;
@@ -1277,7 +1316,7 @@
                 term: termSelect.value,
                 residence: studentType === 'boarder' ? 'Boarder' : 'Day Student',
                 username: 'FSTCAW' + Math.floor(10000000 + Math.random() * 90000000).toString(),
-                rrr: Math.floor(100000000000 + Math.random() * 900000000000).toString(),
+                rrr: document.getElementById('rrr').value,
                 items: getFeeItems(classGrp, studentType),
                 totalFormatted: amount.toLocaleString(),
                 dateStr: dateStr
