@@ -19,6 +19,7 @@
   <link rel="icon" type="image/x-icon" href="https://platformeduportal.com/resources/clients/uploads/logo/0357143669.jpg">
   <link rel="shortcut icon" href="https://platformeduportal.com/resources/clients/uploads/logo/0357143669.jpg">
   <link rel="apple-touch-icon-precomposed" href="assets/img/favicon/96x96.png">
+  
 
   <!-- Icon fonts -->
   <link rel="stylesheet" href="https://fstcawka.sch.ng/resources/themes/niger/fonts/fontawesome/css/all.css">
@@ -27,6 +28,7 @@
   <!-- stylesheet-->
   <link rel="stylesheet" href="https://fstcawka.sch.ng/resources/themes/niger/css/vendors.bundle.css">
   <link rel="stylesheet" href="https://fstcawka.sch.ng/resources/themes/niger/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Paystack Inline JS -->
   <script src="https://js.paystack.co/v1/inline.js"></script>
@@ -494,14 +496,14 @@
         <ul class="list-inline d-none d-lg-block mb-0">
           <li class="list-inline-item mr-3">
             <div class="d-flex align-items-center">
-              <i class="ti-email mr-2"></i>
+              <i class="fa-solid fa-envelope mr-2"></i>
               <a href="mailto:fstcawka@yahoo.com, info@fstcawka.sch.ng">fstcawka@yahoo.com, info@fstcawka.sch.ng</a>
             </div>
           </li>
           <li class="list-inline-item mr-3">
             <div class="d-flex align-items-center">
-              <i class="ti-headphone mr-2"></i>
-              <a href="tel:08035395949">08035395949</a>
+              <i class="fa-solid fa-headphones"></i>
+              <a href="tel:08035395949"> 08035395949</a>
             </div>
           </li>
         </ul>
@@ -510,7 +512,7 @@
             <a href="https://fstcawka.sch.ng/w_results">Check Result</a>
           </li>
           <li class="list-inline-item mr-0 p-md-3 p-2 border-right border-white-0_1">
-            <a href="https://fstcawka.centralbillingfuc.com" target="_blank"> Pay School Fees</a>
+            <a href="#"> Pay School Fees</a>
           </li>
         </ul>
       </div> <!-- END row-->
@@ -1127,8 +1129,10 @@
       function buildInvoiceHTML(data) {
           const logoUrl = "https://platformeduportal.com/resources/clients/uploads/logo/0357143669.jpg";
           const qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=" + data.rrr;
-          const coatOfArms = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Coat_of_arms_of_Nigeria.svg/100px-Coat_of_arms_of_Nigeria.svg.png";
           
+          // Determine Header based on isPTA flag
+          const schoolNameHeader = data.isPTA ? "PTA FEDERAL TECHNICAL COLLEGE, AWKA" : "FEDERAL TECHNICAL COLLEGE, AWKA";
+
           // An exact vector replica of the avatar from the PDF screenshot
           let rawAvatarSvg = '';
 
@@ -1185,7 +1189,7 @@
                   <div class="invoice-content">
                       <div class="invoice-top-header">
                           <img src="${logoUrl}" width="70" alt="Logo">
-                          <h2>FEDERAL TECHNICAL COLLEGE, AWKA</h2>
+                          <h2>${schoolNameHeader}</h2>
                       </div>
                       
                       <div class="invoice-subtitle">
@@ -1320,7 +1324,8 @@
                 rrr: document.getElementById('rrr').value,
                 items: getFeeItems(classGrp, studentType),
                 totalFormatted: amount.toLocaleString(),
-                dateStr: dateStr
+                dateStr: dateStr,
+                isPTA: false
             };
 
             // Store globally for callback access
@@ -1388,7 +1393,8 @@
                 rrr: rrrValue,
                 items: [{ name: 'PTA LEVY', amount: amount }],
                 totalFormatted: amount.toLocaleString(),
-                dateStr: dateStr
+                dateStr: dateStr,
+                isPTA: true
             };
 
             // Store globally for callback access
