@@ -1002,6 +1002,9 @@
                 dateStr: dateStr
             };
 
+            // Store globally for callback access
+            window.invoiceData = invoiceData;
+
             // Build HTML and display in Modal
             const htmlContent = buildInvoiceHTML(invoiceData);
             document.getElementById('invoiceContainer').innerHTML = htmlContent;
@@ -1021,32 +1024,37 @@
       });
 
       function launchPaystack() {
-        let handler = PaystackPop.setup({
-          key: 'pk_test_233ae251c7cdfbfabe22ef9ffdcef9397d7de765', 
-          email: currentPaymentPayload.email,
-          amount: currentPaymentPayload.amount * 100, 
-          currency: 'NGN',
-          ref: 'FSTC_' + Math.floor((Math.random() * 1000000000) + 1),
-          metadata: {
-            custom_fields:[
-              {
-                display_name: "Full Name",
-                variable_name: "full_name",
-                value: currentPaymentPayload.fullName
-              }
-            ]
-          },
-          callback: function(response) {
-            alert('Payment successful! Transaction Reference: ' + response.reference);
-            window.location.reload();
-          },
-          onClose: function() {
-            alert('Payment window closed. Payment was not completed.');
-          }
-        });
+                let handler = PaystackPop.setup({
+                    key: 'pk_test_233ae251c7cdfbfabe22ef9ffdcef9397d7de765', 
+                    email: currentPaymentPayload.email,
+                    amount: currentPaymentPayload.amount * 100, 
+                    currency: 'NGN',
+                    ref: 'FSTC_' + Math.floor((Math.random() * 1000000000) + 1),
+                    metadata: {
+                        custom_fields:[
+                            {
+                                display_name: "Full Name",
+                                variable_name: "full_name",
+                                value: currentPaymentPayload.fullName
+                            }
+                        ]
+                    },
+                    callback: function(response) {
+                        alert('Payment successful! Transaction Reference: ' + response.reference);
+                        // Store invoice data in localStorage
+                        if (window.invoiceData) {
+                            localStorage.setItem('fstc_invoice', JSON.stringify(window.invoiceData));
+                        }
+                        // Redirect to receipt.html
+                        window.location.href = 'receipt.html';
+                    },
+                    onClose: function() {
+                        alert('Payment window closed. Payment was not completed.');
+                    }
+                });
 
-        handler.openIframe();
-      }
+                handler.openIframe();
+            }
   </script>
 
 </body>
