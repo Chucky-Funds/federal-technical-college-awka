@@ -698,24 +698,7 @@
                                   <label>Term</label>
                                   <input type="text" id="sf_term" placeholder="Third term" required readonly value="3rd Term">
                               </div>
-                            </div>                                
-                          
-                          <!-- SECTION 2 & 3 Placeholder -->
-                          <div id="sec_pta" class="dynamic-section">
-                             <div class="custom-input-group">
-                                  <label>Class</label>
-                                  <select id="pta_class"><option value="JSS1A">JSS1 A</option></select>
-                             </div>
-                          </div>
-                          <div id="sec_items" class="dynamic-section">
                               <div class="custom-input-group">
-                                  <label>Class</label>
-                                  <select id="item_class"><option value="JSS1A">JSS1 A</option></select>
-                              </div>
-                          </div>
-
-                          <!-- Always present Amount field -->
-                          <div class="custom-input-group">
                               <label>Amount to Pay</label>
                               <input type="text" id="amount" placeholder="(NGN)" required readonly>
                           </div>
@@ -723,7 +706,164 @@
                                 <input type="checkbox" id="confirmCheck" name="confirmCheck" required style="transform: scale(1.5);">
                                 <label for="confirmCheck" style="padding-left: 3px;">I confirm that all information entered is correct</label>
                             </div>
-                          <button type="submit" class="pay-btn">Proceed</button>
+                            <button type="submit" class="pay-btn" id="sf_btn">Proceed</button>
+                            </div>                                
+                          
+                          <!-- SECTION 2 & 3 Placeholder -->
+                          <div id="sec_pta" class="dynamic-section">
+                             <div class="custom-input-group">
+                                  <label>Class</label>
+                                  <!-- Replaced empty ID with unique pta_class -->
+                                  <select id="pta_class">
+                                      <option value="">Select Class</option>
+
+                                        <option value="JSS2A">JSS2 A</option>
+                                        <option value="JSS2B">JSS2 B</option>
+                                        <option value="JSS2C">JSS2 C</option>
+                                        <option value="JSS2D">JSS2 D</option>
+                                        <option value="JSS2E">JSS2 E</option>
+                                        <option value="JSS2G">JSS2 G</option>
+                                        <option value="JSS2H">JSS2 H</option>
+                                        
+                                        <option value="JSS3A">JSS3 A</option>
+                                        <option value="JSS3B">JSS3 B</option>
+                                        <option value="JSS3C">JSS3 C</option>
+                                        <option value="JSS2D">JSS3 D</option>
+                                        <option value="JSS2E">JSS3 E</option>
+                                        <option value="JSS2G">JSS3 G</option>
+                                        <option value="JSS2H">JSS3 H</option>
+
+                                        <option value="SS2A">SS2 A</option>
+                                        <option value="SS2B">SS2 B</option>
+                                        <option value="SS2C">SS2 C</option>
+                                        <option value="SS2D">SS2 D</option>
+                                        
+                                        <option value="SS3A">SS3 A</option>
+                                        <option value="SS3B">SS3 B</option>
+                                        <option value="SS3C">SS3 C</option>
+                                        <option value="ST2C">SS3 D</option>
+                                        
+                                        
+                                        <option value="ST2A">ST2 A</option>
+                                        <option value="ST2B">ST2 B</option>
+                                        <option value="ST2C">ST2 C</option>
+                                        <option value="ST2D">ST2 D</option>
+                                        
+                                        <option value="ST3A">ST3 A</option>
+                                        <option value="ST3B">ST3 B</option>
+                                        <option value="ST2C">ST3 C</option>
+                                        <option value="ST2D">ST3 D</option>
+                                  </select>
+                              </div>
+                          <div class="custom-input-group">
+                              <label>Student Type</label>
+                              <select id="pta_studentType" name="pta_studentType">
+                                <option value="">Select Type</option>
+                                <option value="day">Day Student</option>
+                                <option value="boarder">Boarder</option>
+                              </select>
+                          </div>
+                          <div class="custom-input-group">
+                              <label>Gender</label>
+                              <select id="pta_gender" name="pta_gender">
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                              </select>
+                          </div>
+                            <div class="custom-input-group">
+                                  <label>Term</label>
+                                  <input type="text" id="pta_term" placeholder="Third term" required readonly value="3rd Term">
+                              </div>
+                              <div class="custom-input-group">
+                              <label>Amount to Pay</label>
+                              <input type="text" id="pta_amount" placeholder="(NGN)" required readonly>
+                          </div>
+                          <div class="form-check" style="padding-left: 2px; font-size: 16px;">
+                                <input type="checkbox" id="pta_confirmCheck" name="pta_confirmCheck" required style="transform: scale(1.5);">
+                                <label for="pta_confirmCheck" style="padding-left: 3px;">I confirm that all information entered is correct</label>
+                            </div>
+                            <!-- Assigned unique ID to PTA button -->
+                            <button type="submit" class="pay-btn" id="pta_pay_btn">Proceed</button>
+                          </div>
+                          
+                          <div id="sec_items" class="dynamic-section">
+                              <div class="custom-input-group">
+                                  <label>Class</label>
+                                  <!-- Replaced empty ID with unique items_class -->
+                                  <select id="items_class">
+                                      <option value="">Select Class</option>
+
+                                        <option value="JSS2A">JSS2 A</option>
+                                        <option value="JSS2B">JSS2 B</option>
+                                        <option value="JSS2C">JSS2 C</option>
+                                        <option value="JSS2D">JSS2 D</option>
+                                        <option value="JSS2E">JSS2 E</option>
+                                        <option value="JSS2G">JSS2 G</option>
+                                        <option value="JSS2H">JSS2 H</option>
+                                        
+                                        <option value="JSS3A">JSS3 A</option>
+                                        <option value="JSS3B">JSS3 B</option>
+                                        <option value="JSS3C">JSS3 C</option>
+                                        <option value="JSS2D">JSS3 D</option>
+                                        <option value="JSS2E">JSS3 E</option>
+                                        <option value="JSS2G">JSS3 G</option>
+                                        <option value="JSS2H">JSS3 H</option>
+
+                                        <option value="SS2A">SS2 A</option>
+                                        <option value="SS2B">SS2 B</option>
+                                        <option value="SS2C">SS2 C</option>
+                                        <option value="SS2D">SS2 D</option>
+                                        
+                                        <option value="SS3A">SS3 A</option>
+                                        <option value="SS3B">SS3 B</option>
+                                        <option value="SS3C">SS3 C</option>
+                                        <option value="ST2C">SS3 D</option>
+                                        
+                                        
+                                        <option value="ST2A">ST2 A</option>
+                                        <option value="ST2B">ST2 B</option>
+                                        <option value="ST2C">ST2 C</option>
+                                        <option value="ST2D">ST2 D</option>
+                                        
+                                        <option value="ST3A">ST3 A</option>
+                                        <option value="ST3B">ST3 B</option>
+                                        <option value="ST2C">ST3 C</option>
+                                        <option value="ST2D">ST3 D</option>
+                                  </select>
+                              </div>
+                          <div class="custom-input-group">
+                              <label>Student Type</label>
+                              <select id="items_studentType" name="items_studentType">
+                                <option value="">Select Type</option>
+                                <option value="day">Day Student</option>
+                                <option value="boarder">Boarder</option>
+                              </select>
+                          </div>
+                          <div class="custom-input-group">
+                              <label>Gender</label>
+                              <select id="items_gender" name="items_gender">
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                              </select>
+                          </div>
+                            <div class="custom-input-group">
+                                  <label>Term</label>
+                                  <input type="text" id="items_term" placeholder="Third term" required readonly value="3rd Term">
+                              </div>
+                              <div class="custom-input-group">
+                              <label>Amount to Pay</label>
+                              <input type="text" id="items_amount" placeholder="(NGN)" required readonly>
+                          </div>
+                          <div class="form-check" style="padding-left: 2px; font-size: 16px;">
+                                <input type="checkbox" id="items_confirmCheck" name="items_confirmCheck" required style="transform: scale(1.5);">
+                                <label for="items_confirmCheck" style="padding-left: 3px;">I confirm that all information entered is correct</label>
+                            </div>
+                            <!-- Assigned unique ID to Items button -->
+                            <button type="submit" class="pay-btn" id="items_pay_btn">Proceed</button>
+                          </div>
+
                       </form>
                   </div>
               </div>
@@ -833,19 +973,36 @@
             this.value = this.value.toUpperCase();
           });
         }
+        
+        // Initialize disabling of hidden sections when page loads
+        selectPayment('school_fees');
       });
       
       function selectPayment(type) {
+          // Remove active classes from all tab buttons
           document.getElementById('lbl_school_fees').classList.remove('active');
           document.getElementById('lbl_pta').classList.remove('active');
           document.getElementById('lbl_items').classList.remove('active');
           
-          document.getElementById('sec_school_fees').classList.remove('active');
-          document.getElementById('sec_pta').classList.remove('active');
-          document.getElementById('sec_items').classList.remove('active');
-          
+          // Add active class to clicked tab
           document.getElementById('lbl_' + type).classList.add('active');
-          document.getElementById('sec_' + type).classList.add('active');
+
+          // Loop through all sections: hide them and DISABLE their inputs
+          // This ensures the browser's form validation ignores the hidden "required" fields
+          const sections = ['school_fees', 'pta', 'items'];
+          sections.forEach(sec => {
+              const sectionEl = document.getElementById('sec_' + sec);
+              sectionEl.classList.remove('active');
+              const inputs = sectionEl.querySelectorAll('input, select, button');
+              inputs.forEach(input => input.disabled = true);
+          });
+          
+          // Show the active section and ENABLE its inputs
+          const activeSecEl = document.getElementById('sec_' + type);
+          activeSecEl.classList.add('active');
+          const activeInputs = activeSecEl.querySelectorAll('input, select, button');
+          activeInputs.forEach(input => input.disabled = false);
+
           setTimeout(updateAmountField, 50); 
       }
 
@@ -1069,33 +1226,35 @@
 
         const email = document.getElementById("email").value;
         const phone = document.getElementById("phone").value;
-        let rawAmount = document.getElementById("amount").value;
-        const amount = parseFloat(rawAmount.replace(/[^0-9.]/g, ''));
-
-        if (isNaN(amount) || amount <= 0) {
-          alert("Please ensure a valid amount is displayed before paying.");
-          return;
-        }
-
+        
         const schoolFeesActive = document.getElementById('sec_school_fees').classList.contains('active');
-        const activeSection = document.querySelector('.dynamic-section.active');
-        const classSelect = activeSection.querySelector('select[id*="class"]');
-        const studentTypeSelect = document.getElementById("studentType");
-        const genderSelect = document.getElementById("gender");
-        const termSelect = document.getElementById("sf_term");
-
-        if (!classSelect || classSelect.value === "") { alert("Please select a valid Class."); return; }
-        if (!studentTypeSelect || studentTypeSelect.value === "") { alert("Please select Student Type."); return; }
-        if (!genderSelect || genderSelect.value === "") { alert("Please select Gender."); return; }
-        if (!termSelect || termSelect.value === "") { alert("Please select Term."); return; }
-
-        currentPaymentPayload = {
-            email: email,
-            amount: amount,
-            fullName: fullName
-        };
-
+        
         if (schoolFeesActive) {
+            let rawAmount = document.getElementById("amount").value;
+            const amount = parseFloat(rawAmount.replace(/[^0-9.]/g, ''));
+
+            if (isNaN(amount) || amount <= 0) {
+              alert("Please ensure a valid amount is displayed before paying.");
+              return;
+            }
+
+            const activeSection = document.querySelector('.dynamic-section.active');
+            const classSelect = activeSection.querySelector('select[id*="class"]');
+            const studentTypeSelect = document.getElementById("studentType");
+            const genderSelect = document.getElementById("gender");
+            const termSelect = document.getElementById("sf_term");
+
+            if (!classSelect || classSelect.value === "") { alert("Please select a valid Class."); return; }
+            if (!studentTypeSelect || studentTypeSelect.value === "") { alert("Please select Student Type."); return; }
+            if (!genderSelect || genderSelect.value === "") { alert("Please select Gender."); return; }
+            if (!termSelect || termSelect.value === "") { alert("Please select Term."); return; }
+
+            currentPaymentPayload = {
+                email: email,
+                amount: amount,
+                fullName: fullName
+            };
+
             const classGrp = getClassGroup(classSelect.value); 
             const studentType = studentTypeSelect.value;       
 
@@ -1136,7 +1295,8 @@
             document.getElementById('modalBodyScroll').scrollTop = 0;
             
         } else {
-            launchPaystack();
+            // Handlers for PTA and Items go here when you are ready to build them
+            alert("PTA or Buy Items logic will be implemented here.");
         }
       }
 
