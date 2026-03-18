@@ -605,16 +605,13 @@
                           <p>Select a payment category to proceed securely</p>
                       </div>
 
-                      <!-- Custom Tabs for 3 Payment Categories -->
+                      <!-- Custom Tabs for 2 Payment Categories -->
                       <div class="payment-type-toggle">
                           <label class="active" id="lbl_school_fees" onclick="selectPayment('school_fees')">
                               <input type="radio" name="pay_type" value="school_fees" checked> School Fees
                           </label>
                           <label id="lbl_pta" onclick="selectPayment('pta')">
                               <input type="radio" name="pay_type" value="pta"> PTA
-                          </label>
-                          <label id="lbl_items" onclick="selectPayment('items')">
-                              <input type="radio" name="pay_type" value="items"> Buy Items
                           </label>
                       </div>
 
@@ -716,7 +713,7 @@
                             <button type="submit" class="pay-btn" id="sf_btn">Proceed</button>
                             </div>                                
                           
-                          <!-- SECTION 2 & 3 Placeholder -->
+                          <!-- SECTION 2: PTA Section -->
                           <div id="sec_pta" class="dynamic-section">
                             
                           <div class="custom-input-group">
@@ -807,83 +804,6 @@
                             </div>
                             <!-- Assigned unique ID to PTA button -->
                             <button type="submit" class="pay-btn" id="pta_pay_btn">Proceed</button>
-                          </div>
-                          
-                          <div id="sec_items" class="dynamic-section">
-                              <div class="custom-input-group">
-                                  <label>Class</label>
-                                  <!-- Replaced empty ID with unique items_class -->
-                                  <select id="items_class">
-                                      <option value="">Select Class</option>
-
-                                        <option value="JSS2A">JSS2 A</option>
-                                        <option value="JSS2B">JSS2 B</option>
-                                        <option value="JSS2C">JSS2 C</option>
-                                        <option value="JSS2D">JSS2 D</option>
-                                        <option value="JSS2E">JSS2 E</option>
-                                        <option value="JSS2G">JSS2 G</option>
-                                        <option value="JSS2H">JSS2 H</option>
-                                        
-                                        <option value="JSS3A">JSS3 A</option>
-                                        <option value="JSS3B">JSS3 B</option>
-                                        <option value="JSS3C">JSS3 C</option>
-                                        <option value="JSS2D">JSS3 D</option>
-                                        <option value="JSS2E">JSS3 E</option>
-                                        <option value="JSS2G">JSS3 G</option>
-                                        <option value="JSS2H">JSS3 H</option>
-
-                                        <option value="SS2A">SS2 A</option>
-                                        <option value="SS2B">SS2 B</option>
-                                        <option value="SS2C">SS2 C</option>
-                                        <option value="SS2D">SS2 D</option>
-                                        
-                                        <option value="SS3A">SS3 A</option>
-                                        <option value="SS3B">SS3 B</option>
-                                        <option value="SS3C">SS3 C</option>
-                                        <option value="ST2C">SS3 D</option>
-                                        
-                                        
-                                        <option value="ST2A">ST2 A</option>
-                                        <option value="ST2B">ST2 B</option>
-                                        <option value="ST2C">ST2 C</option>
-                                        <option value="ST2D">ST2 D</option>
-                                        
-                                        <option value="ST3A">ST3 A</option>
-                                        <option value="ST3B">ST3 B</option>
-                                        <option value="ST2C">ST3 C</option>
-                                        <option value="ST2D">ST3 D</option>
-                                  </select>
-                              </div>
-                          <div class="custom-input-group">
-                              <label>Student Type</label>
-                              <select id="items_studentType" name="items_studentType">
-                                <option value="">Select Type</option>
-                                <option value="day">Day Student</option>
-                                <option value="boarder">Boarder</option>
-                              </select>
-                          </div>
-                          <div class="custom-input-group">
-                              <label>Gender</label>
-                              <select id="items_gender" name="items_gender">
-                                <option value="">Select Gender</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                              </select>
-                          </div>
-                            <div class="custom-input-group">
-                                  <label>Term</label>
-                                  <input type="text" id="items_term" placeholder="Third term" required readonly value="3rd Term">
-                              </div>
-                              <div class="custom-input-group">
-                              <label>Amount to Pay</label>
-                              <input type="text" id="items_amount" placeholder="(NGN)" required readonly>
-                          </div>
-                          <div class="form-check" style="padding-left: 2px; font-size: 16px;">
-                                <input type="checkbox" id="items_confirmCheck" name="items_confirmCheck" required style="transform: scale(1.5);">
-                                <label for="items_confirmCheck" style="padding-left: 3px;">I confirm that all information entered is correct</label>
-                            </div>
-                            <!-- Assigned unique ID to Items button -->
-                            <button type="submit" class="pay-btn" id="items_pay_btn">Proceed</button>
                           </div>
 
                       </form>
@@ -1029,14 +949,12 @@
           // Remove active classes from all tab buttons
           document.getElementById('lbl_school_fees').classList.remove('active');
           document.getElementById('lbl_pta').classList.remove('active');
-          document.getElementById('lbl_items').classList.remove('active');
           
           // Add active class to clicked tab
           document.getElementById('lbl_' + type).classList.add('active');
 
           // Loop through all sections: hide them and DISABLE their inputs
-          // This ensures the browser's form validation ignores the hidden "required" fields
-          const sections = ['school_fees', 'pta', 'items'];
+          const sections = ['school_fees', 'pta'];
           sections.forEach(sec => {
               const sectionEl = document.getElementById('sec_' + sec);
               sectionEl.classList.remove('active');
@@ -1308,7 +1226,6 @@
             const classGrp = getClassGroup(classSelect.value); 
             const studentType = studentTypeSelect.value;       
 
-            // Gather Dynamic Data for our UI Invoice
             let d = new Date();
             let dateStr = d.getFullYear() + "-" + 
                           String(d.getMonth() + 1).padStart(2, '0') + "-" + 
@@ -1334,15 +1251,10 @@
                 isPTA: false
             };
 
-            // Store globally for callback access
             window.invoiceData = invoiceData;
-
-            // Build HTML and display in Modal
             const htmlContent = buildInvoiceHTML(invoiceData);
             document.getElementById('invoiceContainer').innerHTML = htmlContent;
             document.getElementById('pdfModalOverlay').style.display = 'flex';
-            
-            // Scroll modal to top automatically
             document.getElementById('modalBodyScroll').scrollTop = 0;
             
         } else if (ptaActive) {
@@ -1373,7 +1285,6 @@
             const classGrp = getClassGroup(classSelect.value); 
             const studentType = studentTypeSelect.value;       
 
-            // Gather Dynamic Data for our UI Invoice
             let d = new Date();
             let dateStr = d.getFullYear() + "-" + 
                           String(d.getMonth() + 1).padStart(2, '0') + "-" + 
@@ -1382,7 +1293,6 @@
                           String(d.getMinutes()).padStart(2, '0') + ":" + 
                           String(d.getSeconds()).padStart(2, '0');
 
-            // Find the correct RRR input within the active PTA section
             const rrrInput = document.querySelector('#sec_pta input[placeholder="xxxxxxxxxxxx"]');
             const rrrValue = rrrInput ? rrrInput.value : '';
 
@@ -1403,20 +1313,11 @@
                 isPTA: true
             };
 
-            // Store globally for callback access
             window.invoiceData = invoiceData;
-
-            // Build HTML and display in Modal
             const htmlContent = buildInvoiceHTML(invoiceData);
             document.getElementById('invoiceContainer').innerHTML = htmlContent;
             document.getElementById('pdfModalOverlay').style.display = 'flex';
-            
-            // Scroll modal to top automatically
             document.getElementById('modalBodyScroll').scrollTop = 0;
-
-        } else {
-            // Handlers for Items go here when you are ready to build them
-            alert("Buy Items logic will be implemented here.");
         }
       }
 
@@ -1443,11 +1344,9 @@
                     },
                     callback: function(response) {
                         alert('Payment successful! Transaction Reference: ' + response.reference);
-                        // Store invoice data in localStorage
                         if (window.invoiceData) {
                             localStorage.setItem('fstc_invoice', JSON.stringify(window.invoiceData));
                         }
-                        // Redirect to receipt.html
                         window.location.href = 'receipt.html';
                     },
                     onClose: function() {
