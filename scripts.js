@@ -315,7 +315,7 @@ const amountMap = {
                           <div>
                               Generated at ${data.dateStr}
                           </div>
-                          <img src="arms.png" alt="Coat of Arms" width="40">
+                          <img src="pics/arms.png" alt="Coat of Arms" width="40">
                       </div>
                   </div>
               </div>
